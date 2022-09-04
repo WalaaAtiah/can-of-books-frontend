@@ -1,48 +1,53 @@
-# Start your own "Can of Books" App
+# Project Name
 
-This repository has starter code to begin work on creating your own online bookshelf.
+**Author**: Walaa' Atiyh & Amani Al-Zoube
+**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
 
-## What can books do?
+## Overview
+<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for this class. (i.e. What's your problem domain?) -->
 
-Books are life-changing. They have the power to enlighten, educate, entertain, heal, and help us grow. Build out this code base to create an web app to track what books have impacted you, and what's recommended to read next.
+## Getting Started
 
-## Use this template
+**Backend side**
 
-Clone this repo to your own account with the green "Use this template" button. Then, add any collaborators. Now you are ready to start adding features! Deploy your site to let the world know which books have had the greatest impact on you, and what's recommended. Enjoy!
+1- add mongoose to my server  [source!](https://mongoosejs.com/docs/)
+ * npm i mongoose --save
 
+ 2- creat schema &model in other file then requiring in app.js
 
+ 3-seed your database "insert initial data "
 
-
-
-
-## Logistical
-### 1- What hours will you be available to communicate?
-
-### 2- What platform will you use to communicate (ie. Slack, phone ...)?
-
-### 3- How often will you take breaks?
-
-### 4- What is your plan if you start to fall behind?
-
-<br>
-<br>
-
-## Cooperative
-### 1- Make a list of each parson's strengths.
-
-### 2- How can you best utilize these strengths in the development of your application?
-
-### 3- In what areas do you each want to develop greater strength?
-
-### 4- Knowing that every person in your team needs to understand the code, how do you plan to approach the day-to-day development?
+ 4- creat books route to get the request and send the response to the user "front end"
 
 
-<br>
-<br>
 
-## Conflict Resolution
-### 1- What will your team do if one person is pulling all the weight while the other person is not contributing?
 
-### 2- What will your team do if one person is taking over the project and not letting the other member contribute?
+## Architecture
+![Working Flow](./lab.png)
 
-### 3- How will you approach each other and the challenge of building an application knowing that it is impossible for two people to be at the exact same place in understanding and skill level?
+## Change Log
+4/9/2022 lab 11 :
+the application have mongo data base with initial data.
+
+## Estimates
+<!-- See below -->
+
+## Credit and Collaborations
+my partner is Amani ALZoubi , we build the workflow
+
+
+
+
+## Time Estimates
+
+**lab 11 at 4/9/2022**
+
+Name of feature: READ of CRUD
+
+Estimate of time needed to complete: 5hours
+
+Start time: 3.00pm sunday
+
+Finish time: 1.51 am monday
+
+Actual time needed to complete: 8 hoursevel?
