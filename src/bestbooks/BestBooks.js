@@ -3,6 +3,8 @@ import axios from "axios";
 import Carousel from "react-bootstrap/Carousel";
 import "./bestbooks.css";
 import BookFormModal from "../BookFormModal";
+import UpdateModel from "../UpdateModel";
+
 
 class BestBooks extends React.Component {
   constructor(props) {
@@ -10,17 +12,18 @@ class BestBooks extends React.Component {
     this.state = {
       books: [],
       setshow: false,
-      flagbutton:true
+      updateshow:false,
+      currentbook : {}
     };
   }
 
   // http://localhost:3001/books
-
+ //get book
   componentDidMount = () => {
     axios
       .get(`${process.env.REACT_APP_URL}books`)
       .then((result) => {
-        console.log("result.data", result.data);
+        // console.log("result.data", result.data);
         this.setState({
           books: result.data,
         });
@@ -42,7 +45,7 @@ class BestBooks extends React.Component {
     });
   }
     // http://localhost:3001/books
-
+ // add book
    postBook=(obj)=>{
     console.log("inside postbook")
     axios
@@ -57,7 +60,7 @@ class BestBooks extends React.Component {
     })
    }
 
-
+// delete book
    deleteBook =(id)=>{
     this.setState({
       flagbutton:false
@@ -76,6 +79,40 @@ class BestBooks extends React.Component {
       console.log(err);
     })
    }  
+// update book 
+openUpdateform=(item)=>{
+  console.log("openUpdateform")
+  this.setState({
+    updateshow: true,
+    currentbook :item
+
+  });
+
+}
+UpdatehandleClose=()=>{
+  this.setState({
+    updateshow: false,
+  });
+
+}
+updatebook=(obj,id)=>{
+  console.log("inside update")
+  console.log(obj)
+  console.log(id)
+  axios
+  .put(`${process.env.REACT_APP_URL}books/${id}`, obj)
+  .then(result=>{
+    this.setState({
+      books : result.data
+    })
+    
+  })
+  .catch(err=>{
+    console.log(err);
+  })
+ }
+
+
 
 
   /* TODO: Make a GET request to your API to fetch all the books from the database  */
@@ -108,13 +145,15 @@ class BestBooks extends React.Component {
                       <h3 className="divslide">{item.title}</h3>
                       <br></br>
                       <h5 className="divslide">
-                        Description: {item.description}
+                       {item.description}
                       </h5>
                       <br></br>
                       <h5 className="divslide">Status: {item.status}</h5>
                       <br></br>
                       
                       (<button  onClick={() => this.deleteBook(item._id)} >Delete</button>)
+                      (<button  onClick={() => this.openUpdateform(item)} >Update</button>)
+
 
                     </Carousel.Caption>
                   </Carousel.Item>
@@ -129,6 +168,12 @@ class BestBooks extends React.Component {
           setshow={this.state.setshow}
           handleClose={this.handleClose}
           postBook={this.postBook}
+        />
+        <UpdateModel
+          updateshow={this.state.updateshow}
+          UpdatehandleClose={this.UpdatehandleClose}
+          updatebook={this.updatebook}
+          currentbook={this.state.currentbook}
         />
       </>
     );
