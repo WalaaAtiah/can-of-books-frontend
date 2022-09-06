@@ -1,0 +1,15 @@
+.divslide{
+    color:black
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    margin:30px;
+}
+.h2{
+    display: flex;
+    justify-content: center;  
+    padding:10px ;
+
+}
