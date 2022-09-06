@@ -14,7 +14,7 @@ class BookFormModal extends React.Component {
     };
     console.log((obj));
      this.props.postBook(obj)
-    
+    this.props.handleClose()
   };
 
 
