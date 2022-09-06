@@ -114,7 +114,7 @@ class BestBooks extends React.Component {
                       <h5 className="divslide">Status: {item.status}</h5>
                       <br></br>
                       
-                      {this.state.flagbutton &&(<button  onClick={() => this.deleteBook(item._id)} >Delete</button>)}
+                      (<button  onClick={() => this.deleteBook(item._id)} >Delete</button>)
 
                     </Carousel.Caption>
                   </Carousel.Item>
