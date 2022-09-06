@@ -10,6 +10,7 @@ class BestBooks extends React.Component {
     this.state = {
       books: [],
       setshow: false,
+      flagbutton:true
     };
   }
 
@@ -54,6 +55,26 @@ class BestBooks extends React.Component {
     .catch(err=>{
       console.log(err);
     })
+   }
+
+
+   deleteBook =(id)=>{
+    this.setState({
+      flagbutton:false
+      
+    });
+
+    console.log(id)
+    axios
+    .delete(`${process.env.REACT_APP_URL}books/${id}`) //http://localhost:3001/deleteCat?id=${id}
+    .then(result =>{
+      this.setState({
+        catArr : result.data
+      })
+    })
+    .catch(err=>{
+      console.log(err);
+    })
    }  
 
 
@@ -72,12 +93,13 @@ class BestBooks extends React.Component {
           <button onClick={this.openForm}>Add a Book</button>
         </div>
         {this.state.books.length ? (
-          <div style={{ width: "700PX" }}>
+          <div style={{ width: "600PX" }}>
             <Carousel fade>
               {this.state.books.map((item) => {
                 return (
                   <Carousel.Item>
                     <img
+                    id="img"
                       className="d-block w-100"
                       src="https://th.bing.com/th/id/R.755c4ed31d4b6de46bda3d934ef3360e?rik=yNxKu%2boe6XK7Dg&riu=http%3a%2f%2faplacecalledspecial.com%2fwp-content%2fuploads%2f2013%2f08%2fLove_Story.jpg&ehk=39GJaYRjEH4oK1ocS3MfGR50ZObkxnIHRIPufG3KCVA%3d&risl=&pid=ImgRaw&r=0"
                       alt="Slide"
@@ -90,6 +112,10 @@ class BestBooks extends React.Component {
                       </h5>
                       <br></br>
                       <h5 className="divslide">Status: {item.status}</h5>
+                      <br></br>
+                      
+                      {this.state.flagbutton &&(<button  onClick={() => this.deleteBook(item._id)} >Delete</button>)}
+
                     </Carousel.Caption>
                   </Carousel.Item>
                 );
