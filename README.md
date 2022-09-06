@@ -38,7 +38,14 @@ Createt the front end
 * use post method to add book and delete method to delete it 
 3- backend 
 *  creat books route for add and another route for delete 
+#### lab 13:
 
+1- front end 
+* creat modale for update book 
+* update butten 
+* use PUT method to UPDATE book 
+3- backend 
+*  creat books route for UPDATE .
 
 ## Architecture
 ### lab 11:
@@ -53,6 +60,9 @@ the application have mongo data base with initial data.render all the books retu
 
 5/9/2022 lab 12:
 The user can add a book in the database or delete it .
+
+6/9/2022 lab 12:
+The user can update the information inside the book's slides .
 
 ## Estimates
 <!-- See below -->
@@ -80,7 +90,7 @@ Actual time needed to complete: 8 hours
 
 **lab 12 at 5/9/2022**
 
-Name of feature: READ of CRUD
+Name of feature: add&delete
 
 Estimate of time needed to complete: 10hours
 
@@ -89,3 +99,16 @@ Start time: 8.00pm monday
 Finish time: 3.30am tusday
 
 Actual time needed to complete: 10 hours
+
+
+**lab 13 at 6/9/2022**
+
+Name of feature: Update
+
+Estimate of time needed to complete: 1 hours
+
+Start time: 4.00pm 
+
+Finish time: 5.30pm 
+
+Actual time needed to complete: 1.30 hours
