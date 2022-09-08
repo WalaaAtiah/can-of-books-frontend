@@ -3,3 +3,26 @@
   justify-content: space-between;
   gap: 30px;
 }
+
+.divprofile{
+  background-image: url(../background4.png);
+  filter: brightness(1.2) invert(.1);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+}
+.divwelcam{
+  background-image: url(../background4.png);
+  filter: brightness(1.2) invert(.1);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height: 700px;
+  color: black;
+  text-align: center;
+  padding-top: 50px;
+  
+}

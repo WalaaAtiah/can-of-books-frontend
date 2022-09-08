@@ -17,4 +17,9 @@
 filter: brightness(1.2) invert(.1);
 
 }
+.carousel{
+    display: flex;
+    justify-content: center;
+    margin:50px;
+}
 
