@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
+import { withAuth0 } from '@auth0/auth0-react';
 
 class BookFormModal extends React.Component {
 
@@ -11,8 +12,9 @@ class BookFormModal extends React.Component {
       title: event.target.title.value,
       description: event.target.description.value,
       status: event.target.select.value,
+      email:this.props.auth0.user.email
     };
-    console.log((obj));
+    console.log(("obj in bookformmodel",obj));
      this.props.postBook(obj)
     this.props.handleClose()
   };
@@ -22,6 +24,8 @@ class BookFormModal extends React.Component {
 
   
   render() {
+    const { user } = this.props.auth0;
+ console.log(user.email)
     return (
       <>
         <Modal show={this.props.setshow} onHide={this.props.handleClose}>
@@ -82,4 +86,4 @@ class BookFormModal extends React.Component {
   }
 }
 
-export default BookFormModal;
+export default  withAuth0(BookFormModal);

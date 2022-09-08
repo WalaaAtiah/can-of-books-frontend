@@ -4,6 +4,7 @@ import Carousel from "react-bootstrap/Carousel";
 import "./bestbooks.css";
 import BookFormModal from "../BookFormModal";
 import UpdateModel from "../UpdateModel";
+import { withAuth0 } from '@auth0/auth0-react';
 
 
 class BestBooks extends React.Component {
@@ -13,15 +14,16 @@ class BestBooks extends React.Component {
       books: [],
       setshow: false,
       updateshow:false,
-      currentbook : {}
+      currentbook : {},
+      email:this.props.auth0.user.email
     };
   }
 
-  // http://localhost:3001/books
+  // http://localhost:3001/books?email=email
  //get book
   componentDidMount = () => {
     axios
-      .get(`${process.env.REACT_APP_URL}books`)
+      .get(`${process.env.REACT_APP_URL}books?email=${this.state.email}`)
       .then((result) => {
         // console.log("result.data", result.data);
         this.setState({
@@ -47,7 +49,7 @@ class BestBooks extends React.Component {
     // http://localhost:3001/books
  // add book
    postBook=(obj)=>{
-    console.log("inside postbook")
+    console.log("inside postbook",obj)
     axios
     .post(`${process.env.REACT_APP_URL}books`, obj)
     .then(result =>{
@@ -69,7 +71,7 @@ class BestBooks extends React.Component {
 
     console.log(id)
     axios
-    .delete(`${process.env.REACT_APP_URL}books/${id}`) //http://localhost:3001/deleteCat?id=${id}
+    .delete(`${process.env.REACT_APP_URL}books/${id}?email=${this.state.email}`) //http://localhost:3001/deleteCat?id=${id}
     .then(result =>{
       this.setState({
         catArr : result.data
@@ -118,6 +120,8 @@ updatebook=(obj,id)=>{
   /* TODO: Make a GET request to your API to fetch all the books from the database  */
 
   render() {
+    const { user } = this.props.auth0;
+
     /* TODO: render all the books in a Carousel */
 
     return (
@@ -180,4 +184,4 @@ updatebook=(obj,id)=>{
   }
 }
 
-export default BestBooks;
+export default  withAuth0(BestBooks);

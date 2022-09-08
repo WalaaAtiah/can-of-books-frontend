@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
+import { withAuth0 } from '@auth0/auth0-react';
 
 class UpdateModel extends React.Component {
 
@@ -11,6 +12,8 @@ class UpdateModel extends React.Component {
       title: event.target.title.value,
       description: event.target.description.value,
       status: event.target.select.value,
+      email:this.props.auth0.user.email
+
     };
     const id = this.props.currentbook._id;
     console.log (obj)
@@ -25,6 +28,8 @@ class UpdateModel extends React.Component {
 
   
   render() {
+    const { user } = this.props.auth0;
+
     return (
       <>
         <Modal show={this.props.updateshow} onHide={this.props.UpdatehandleClose}>
@@ -90,4 +95,4 @@ class UpdateModel extends React.Component {
   }
 }
 
-export default UpdateModel;
+export default withAuth0(UpdateModel);
