@@ -130,8 +130,8 @@ updatebook=(obj,id)=>{
           <button onClick={this.openForm}>Add a Book</button>
         </div>
         {this.state.books.length ? (
-          <div style={{ width: "600PX" }}>
-            <Carousel fade>
+          <div style={{ width: "800PX" }}>
+            <Carousel fade className="carousel">
               {this.state.books.map((item) => {
                 return (
                   <Carousel.Item>

@@ -44,8 +44,15 @@ Createt the front end
 * creat modale for update book 
 * update butten 
 * use PUT method to UPDATE book 
-3- backend 
+2- backend 
 *  creat books route for UPDATE .
+
+#### lab 15:
+
+1- front end 
+* use AUTH0 library to Add the Authentication process
+* 
+
 
 ## Architecture
 ### lab 11:
@@ -53,6 +60,11 @@ Createt the front end
 
 ### lab 12:
 ![Working Flow](./lab12.png)
+### lab 13:
+![Working Flow](./lab13.png)
+### lab 15:
+![Working Flow](./lab15.png)
+
 ## Change Log
 4/9/2022 lab 11 :
 
@@ -61,8 +73,11 @@ the application have mongo data base with initial data.render all the books retu
 5/9/2022 lab 12:
 The user can add a book in the database or delete it .
 
-6/9/2022 lab 12:
+6/9/2022 lab 13:
 The user can update the information inside the book's slides .
+
+6/9/2022 lab 15:
+add the Authentication process to my app .the user should create his account and login to use the application
 
 ## Estimates
 <!-- See below -->
@@ -112,3 +127,16 @@ Start time: 4.00pm
 Finish time: 5.30pm 
 
 Actual time needed to complete: 1.30 hours
+
+
+**lab 15 at 8/9/2022**
+
+Name of feature: Authentication
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 12.00am 
+
+Finish time: 
+
+Actual time needed to complete: 
