@@ -5,24 +5,35 @@
 }
 
 .divprofile{
-  background-image: url(../background4.png);
-  filter: brightness(1.2) invert(.1);
+  background-image: url(https://th.bing.com/th/id/R.a969e236f0e5117b71584a3fbfc24e65?rik=2mTGftkZFNZ0%2fQ&pid=ImgRaw&r=0);
+  filter: brightness(0.9) invert(.1);
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+ 
 
 }
 .divwelcam{
-  background-image: url(../background4.png);
-  filter: brightness(1.2) invert(.1);
+  background-image: url(https://th.bing.com/th/id/R.a969e236f0e5117b71584a3fbfc24e65?rik=2mTGftkZFNZ0%2fQ&pid=ImgRaw&r=0);
+  filter: brightness(0.9) invert(.1);
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
   height: 700px;
-  color: black;
+  color: rgb(255, 255, 255);
   text-align: center;
   padding-top: 50px;
   
+}
+.about{
+  background-image: url(https://th.bing.com/th/id/R.a969e236f0e5117b71584a3fbfc24e65?rik=2mTGftkZFNZ0%2fQ&pid=ImgRaw&r=0);
+  filter: brightness(0.8) invert(0);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+  height: 700px;
+  color: rgb(255, 255, 255); 
 }
